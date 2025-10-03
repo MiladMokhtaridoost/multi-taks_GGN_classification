@@ -56,3 +56,35 @@ chrA_ID   chrB_ID   frequency
 - **Healthy/Cancer**: "Healthy" or "Cancer"
 - **Tissue**: one of {Blood, Brain, Breast, Colon, Lung, Skin}
 - **Sex**: "M" or "F"
+
+---
+## Usage
+**Training**
+Submit a job to the HPC cluster:
+```
+#!/bin/bash
+#SBATCH --job-name=gnn_train
+#SBATCH --output=gnn_train_%j.out
+#SBATCH --error=gnn_train_%j.err
+#SBATCH --partition=gen_gpu
+#SBATCH --gres=gpu:1
+#SBATCH --mem=100G
+#SBATCH --cpus-per-task=12
+#SBATCH -t 48:00:00
+
+module load python/3.11.3_torch_gpu
+pathway=/path/to/repo
+
+python $pathway/GNN-transformer_v0.3.py "$pathway" 50 0.01
+```
+
+Arguments:
+
+- pathway → base path to input/output directories
+- epochs → number of training epochs
+- learning_rate → optimizer learning rate
+
+Output
+- Checkpoints → output/ckpt_epoch_xxxx.pt
+- Final model weights → output/gnn_transformer_model.pt
+- Evaluation results → printed in .out file and saved to output/evaluation_results.txt
