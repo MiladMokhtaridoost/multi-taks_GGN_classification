@@ -89,3 +89,22 @@ Output
 - Checkpoints → output/ckpt_epoch_xxxx.pt
 - Final model weights → output/gnn_transformer_model.pt
 - Evaluation results → printed in .out file and saved to output/evaluation_results.txt
+
+
+---
+## Model Architecture
+
+Input Graph (Hi-C)
+   ↓
+GCNConv (Graph Convolution)
+   ↓
+ReLU Activation
+   ↓
+Global Mean Pooling (graph-level embedding)
+   ↓
+Fully Connected Linear Layer (8 outputs)
+   ├── [0] Health status (BCEWithLogitsLoss)
+   ├── [1–6] Tissue type (CrossEntropyLoss)
+   └── [7] Sex (BCEWithLogitsLoss)
+
+---
