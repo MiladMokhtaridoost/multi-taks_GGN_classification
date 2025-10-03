@@ -125,3 +125,22 @@ The evaluation function computes accuracy for each task:
 - Health Accuracy (%)
 - Tissue Accuracy (%)
 - Sex Accuracy (%)
+
+---
+
+##  Example Output (from test run)  
+
+```
+✅ Found 9 datasets with available Hi-C files.
+Model output shape: (1, 8)
+Starting training...
+Epoch 1, Loss: 2.84
+...
+Epoch 50, Loss: 1.76
+Training finished after 247 minutes.
+Evaluation Results:
+  Health Accuracy: 88.56%
+  Tissue Accuracy: 71.56%
+  Sex Accuracy: 97.00%
+
+```
