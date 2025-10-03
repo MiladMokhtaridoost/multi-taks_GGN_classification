@@ -60,6 +60,7 @@ chrA_ID   chrB_ID   frequency
 ---
 ## Usage
 **Training**
+
 Submit a job to the HPC cluster:
 ```
 #!/bin/bash
