@@ -37,8 +37,19 @@ module load python/3.11.3_torch_gpu
 - 1. **Hi-C edge list files**
 Each dataset is a tab-delimited text file with the following columns:
 
+```
 chrA_ID   chrB_ID   frequency
 1_82      1_90      12.5
+```
 
-. chrX_binIndex format for bin identifiers
-. Frequencies are floating-point contact strengths
+- chrX_binIndex format for bin identifiers
+- Frequencies are floating-point contact strengths
+
+- 2. **Label table (CSV)**
+     Example:
+
+```
+     SRX_ID,Healthy/Cancer,Tissue,Sex
+     SRX001,Healthy,Brain,M
+     SRX002,Cancer,Lung,F
+```
