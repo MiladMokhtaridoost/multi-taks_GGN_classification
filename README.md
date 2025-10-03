@@ -94,6 +94,7 @@ Output
 ---
 ## Model Architecture
 
+```
 Input Graph (Hi-C)
    ↓
 GCNConv (Graph Convolution)
@@ -106,6 +107,7 @@ Fully Connected Linear Layer (8 outputs)
    ├── [0] Health status (BCEWithLogitsLoss)
    ├── [1–6] Tissue type (CrossEntropyLoss)
    └── [7] Sex (BCEWithLogitsLoss)
+```
 
 ---
 
