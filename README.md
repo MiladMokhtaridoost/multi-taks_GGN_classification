@@ -112,6 +112,14 @@ Fully Connected Linear Layer (8 outputs)
 ## Checkpointing & Resuming
 
 - After each epoch, the model saves a checkpoint (ckpt_epoch_xxxx.pt).
-
 - On restart, the pipeline automatically loads the latest checkpoint and resumes training.
+
 ---
+
+##  Evaluation
+
+The evaluation function computes accuracy for each task:
+
+- Health Accuracy (%)
+- Tissue Accuracy (%)
+- Sex Accuracy (%)
